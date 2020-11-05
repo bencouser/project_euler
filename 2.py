@@ -4,7 +4,6 @@
 
 
 fib = []
-n = 32
 
 fib.append(0)
 fib.append(1)
@@ -19,11 +18,10 @@ sequence()
 
 fib_two = []
 
-for i in range(n+1):
+for i in range(n):
         if fib[i] % 2 == 0:
                 fib_two.append(fib[i])
 
 x = sum(fib_two)
-
 
 print("The sum of ", fib_two, "is ", x)
