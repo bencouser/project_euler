@@ -10,16 +10,12 @@ fib.append(0)
 fib.append(1)
 fib.append(2)
 
-def next_fib(a,b):
-        c = a + b
-        return c
-
-def sequence(N):
-        for i in range(N):
-                c = next_fib(fib[i+1], fib[i+2])
+def sequence():
+        while max(fib) < 4000000:
+                c = fib[-1] + fib[-2]
                 fib.append(c)
-
-sequence(n)
+         
+sequence()
 
 fib_two = []
 
