@@ -2,11 +2,13 @@
 
 # what is the largest prime factpr of 600851475143?
 
-number = 13195
+import numpy as np
+
+number = 600851475143
 
 def all_factors(N):
         factors = []
-        for i in range(1, N):
+        for i in range(1, int(np.sqrt(N) + 1)): #we only need to check up to the root of ur number
                 if N % i == 0:
                         factors.append(i)
         factors.append(N)
@@ -17,12 +19,10 @@ def is_it_prime(n):
 
 allFactors = all_factors(number)
 
-largest_prime = 0
+largestPrime = 0
 
 for i in range(len(allFactors)):
         if is_it_prime(allFactors[i]):
-                largest_prime = allFactors[i]
+                largestPrime = allFactors[i]
 
-
-print(largest_prime)
-
+print(largestPrime)
