@@ -13,17 +13,15 @@ def is_it_palindromic(number):
         digit = digits(number)
         originalDigits = digit
         digit.reverse()
-        reverseDigit = digit
-        return originalDigits == reverseDigit 
-
-is_it_palindromic(9009)
+        reverseDigits = digit
+        return originalDigits == reverseDigits
 
 largest_palindromic = 0
 
 for i in range(101, 1000):
         for j in range(101, 1000):
                 possible_pal = i * j
-                if is_it_palindromic(possible_pal) and possible_pal > largest_palindromic:
+                if is_it_palindromic(possible_pal) == True:
                         largest_palindromic = possible_pal
 
 print(largest_palindromic)
