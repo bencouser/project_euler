@@ -2,14 +2,27 @@
 
 # what is the largest prime factpr of 600851475143?
 
-def is_it_prime(N):
-        for i in range(2, N):
-                if (N % i) ==0: 
-                        print(N, "is not a prime number")
-                        print(i, "times",num//i,"is",N)
-                        break   
-        else:   
-                print(N, "is a prime number")
+number = 13195
+
+def all_factors(N):
+        factors = []
+        for i in range(1, N):
+                if N % i == 0:
+                        factors.append(i)
+        factors.append(N)
+        return factors
+
+def is_it_prime(n):
+        return len(all_factors(n)) == 2
+
+allFactors = all_factors(number)
+
+largest_prime = 0
+
+for i in range(len(allFactors)):
+        if is_it_prime(allFactors[i]):
+                largest_prime = allFactors[i]
 
 
-is_it_prime(29)
+print(largest_prime)
+
