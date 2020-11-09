@@ -50,4 +50,20 @@ for i in range(height - product_mag):
                         largest_product = product
                 product = 1
 
+ for i in range(height - product_mag):
+        for j in range(width - product_mag):
+                for k in range(product_mag):
+                        product *= grid[i+k][j+k]
+                if product > largest_product:
+                        largest_product = product
+                product = 1
+
+for i in range(height - product_mag):
+        for j in range(product_mag, width - product_mag):
+                for k in range(product_mag):
+                        product *= grid[i+k][j-k]
+                if product > largest_product:
+                        largest_product = product
+                product = 1
+                
 print(largest_product)
