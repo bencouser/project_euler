@@ -3,27 +3,25 @@
 
 int main(){
 
-  int sum;
-  int iOne;
-  int iTwo;
-  int plus;
-  int jump = 1;
+  int total = 0;
+  int i = 1;
+  int j = 2;
+  int k;
+
+  total += i;
+  total += j;
   
-  iTwo = 2;
+  while(j < 4000000){
+    k = i + j;
+    if(k % 2 == 0){
+      total += k; 
+    }
+    i = j;
+    j = k;
 
-  sum += 1;
-  sum += 2;
-
-  for(iOne = 1; iOne < 2000000; iOne += jump){
-    jump = iTwo - iOne;
-    plus = iTwo + iOne;
-    iOne = iTwo;
-    iTwo = plus;
-    sum += plus;
-    
   }
     
-  printf("%d", sum);
+  printf("The sum of even primes less that 4,000,000 is: %d\n", total);
 
   return 0;
 }
