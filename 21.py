@@ -27,5 +27,15 @@ def factors(number):
 def d(number):
     return sum(factors(number)) - number
 
-print(d(220))
+amicableNumbers = 0
 
+def isAmicable(a, b, amicableNumbers):
+    if d(a) == d(b):
+        amicableNumbers += a
+        amicableNumbers += b
+
+for i in range(0,10001):
+    for j in range(i, 10001):
+        isAmicable(i,j,amicableNumbers)
+
+print(amicableNumbers)
