@@ -30,11 +30,12 @@ def d(number):
 amicableNumbers = 0
 
 def isAmicable(a, b, amicableNumbers):
-    if d(a) == d(b):
+    if d(a) == b and d(b) == a:
         amicableNumbers += a
         amicableNumbers += b
 
-for i in range(0,10001):
+for i in range(1,10001):
+    print(i)
     for j in range(i, 10001):
         isAmicable(i,j,amicableNumbers)
 
