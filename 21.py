@@ -24,19 +24,20 @@ def factors(number):
     return factors
 
 
-def d(number):
-    return sum(factors(number)) - number
+def dFunction(number):
+    return (sum(factors(number)) - number)
 
-amicableNumbers = 0
+amicableNumbers = []
 
 def isAmicable(a, b, amicableNumbers):
-    if d(a) == b and d(b) == a:
-        amicableNumbers += a
-        amicableNumbers += b
+    if dFunction(a) == b and dFunction(b) == a:
+        amicableNumbers.append(a)
+        amicableNumbers.append(b)
 
 for i in range(1,10001):
-    print(i)
-    for j in range(i, 10001):
+#    print(i, amicableNumbers)
+    for j in range(i + 1, 10001):
         isAmicable(i,j,amicableNumbers)
 
-print(amicableNumbers)
+
+print(sum(amicableNumbers))
