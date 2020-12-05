@@ -9,5 +9,15 @@ values = []
 for i in range(1, 27):
     values.append(i)
 
+def indivName(i, names):
+    name = names[i]
+    return name
 
+def findLetters(name):
+    letters = []
+    nameLength = len(name)
+    for i in range(nameLength - 1):
+        letters.append(name[i])
+    return letters
 
+print(findLetters(indivName(0, names))
