@@ -1,7 +1,4 @@
-import numpy as np
 import math
-
-
 # function to efficiently get all factors
 def getFactors(number):
     half_factors = []
@@ -21,7 +18,6 @@ def getFactors(number):
     return factors
 
 abundantNumbers = []
-notSumofTwoAN = []
 numbers = {}
 for i in range(1,28124):
     numbers[i] = i
