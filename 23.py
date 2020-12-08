@@ -1,7 +1,9 @@
+import numpy as np
 import math
 
+
 # function to efficiently get all factors
-def factors(number):
+def getFactors(number):
     half_factors = []
     factors = []
     for potentialFactor in range(1, int(math.sqrt(number)) + 1):
@@ -18,15 +20,22 @@ def factors(number):
             factors.append(fact)
     return factors
 
-# function reutns true or false depending if it is an abundant number
-def isAbundant(number):
-    factorsNumber = factors(number)
-    sumFactors = sum(factorsNumber)
-    return number < sumFactors
-
 abundantNumbers = []
 notSumofTwoAN = []
+numbers = {}
+for i in range(1,28124):
+    numbers[i] = i
 
-        
+for i in range(1,28124):
+    if (sum(getFactors(i))-i) > i:
+        abundantNumbers.append(i)
+    else:
+        pass
 
+for abNumberA in abundantNumbers:
+    for abNumberB in abundantNumbers:
+        total = abNumberA + abNumberB
+        if total in numbers:
+            numbers.pop(total)
 
+print(sum(numbers))
