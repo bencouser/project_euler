@@ -8,6 +8,7 @@
 # in example 7 is largest and is prime, lets find the primes from 1-1000
 
 import math
+import itertools
 
 primeList = []
 
@@ -35,24 +36,22 @@ for i in range(1,1001):
     if isitPrime(i):
         primeList.append(i)
 
-def find_period(d):
-    z = x = 1 * 9
-    k = 1
-    while z % d:
-        z = z * 10 + x
-        k += 1
-    return k
-
 maxPeriod = 0
 maxPrime = 0
 
-for i in range(5, (len(primeList))+ 1):
-    print("Checking: ", primeList[i])
-    period = find_period(i)
-    if period > maxPeriod:
-        maxPeriod = period 
-        maxPrime = i
-    else:
-        pass
-
+for i in range(1, len(primeList)):
+    seenNumbers = {}
+    n = primeList[i-1]
+    term = 1
+    for j  in itertools.count():
+        if term in seenNumbers:
+            if len(seenNumbers) > maxPeriod:
+                maxPeriod = len(seenNumbers)
+                maxPrime = primeList[i-1]
+            else:
+                break
+        else:
+            seenNumbers[term] = i
+            term  = term * 10 % n
+            
 print(maxPrime)
