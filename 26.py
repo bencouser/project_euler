@@ -35,4 +35,24 @@ for i in range(1,1001):
     if isitPrime(i):
         primeList.append(i)
 
-print(max(primeList))
+def find_period(d):
+    z = x = 1 * 9
+    k = 1
+    while z % d:
+        z = z * 10 + x
+        k += 1
+    return k
+
+maxPeriod = 0
+maxPrime = 0
+
+for i in range(5, (len(primeList))+ 1):
+    print("Checking: ", primeList[i])
+    period = find_period(i)
+    if period > maxPeriod:
+        maxPeriod = period 
+        maxPrime = i
+    else:
+        pass
+
+print(maxPrime)
