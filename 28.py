@@ -6,8 +6,14 @@
 
 # top right corner of square is always the dimension of the square, squared
 # 1 = 1**2, 9 = 3**2, 25 = 5**2
+# we can work out other corners from this fact and knowing the dimensions
 
 sum = 1
 
-for i in range(1, 26):
+size = 1001
 
+for i in range(3, size+1, 2):
+    for j in range(4):
+        sum += (i**2) - j*(i-1)
+
+print(sum)
