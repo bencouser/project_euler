@@ -5,12 +5,7 @@ terms = []
 
 for a in range(2, 101):
     for b in range(2, 101):
-        terms.append(a**b)
+        if (a**b) not in terms:
+            terms.append(a**b)
 
-noRepeats = []
-
-for i in terms:
-    if i  not in noRepeats:
-        noRepeats.append(i)
-
-print(len(noRepeats))
+print(len(terms))
