@@ -11,7 +11,7 @@ import math
 def getFactors(number):
     half_factors = []
     factors = []
-    for potentialFactor in range(1, int(math.sqrt(number)) + 1):
+    for potentialFactor in range(1, int(math.sqrt(abs(number))) + 1):
         if number % potentialFactor == 0:
             half_factors.append(potentialFactor)
     size = len(half_factors)
@@ -32,15 +32,36 @@ def quadraticForm(n, a, b):
     value = n**2 + n*a + b
     return value
 
-a = 1
-b = 41
-value = 2
-count = 0
+maxCount = 0
+maxA = 0
+maxB = 0
 
-while isitPrime(value):
-    value = quadraticForm(count, a, b)
-    if isitPrime(value):
-        count += 1
-    else:
-        print(count)
-        break
+for i in range(2000):
+    a = i - 1000
+    for j in range(2001):
+        b = j - 1000
+        count = 0
+        value = 2
+        while isitPrime(value):
+            value = quadraticForm(count, a, b)
+            if isitPrime(value):
+                count += 1
+            else:
+                if count > maxCount:
+                    maxCount = count
+                    maxA = a
+                    maxB = b
+                    break
+
+print(maxA, maxB, maxA*maxB)
+
+#def fincCount(n, a, b):
+##    while isitPrime(value):
+#        value = quadraticForm(count, a, b)
+#        if isitPrime(value):
+#            count += 1
+#        else:
+#            print(count)
+#            break
+#
+
