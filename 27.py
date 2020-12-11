@@ -54,14 +54,3 @@ for i in range(2000):
                     break
 
 print(maxA, maxB, maxA*maxB)
-
-#def fincCount(n, a, b):
-##    while isitPrime(value):
-#        value = quadraticForm(count, a, b)
-#        if isitPrime(value):
-#            count += 1
-#        else:
-#            print(count)
-#            break
-#
-
