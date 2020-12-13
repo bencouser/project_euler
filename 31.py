@@ -10,15 +10,19 @@
 # suprisingly 2 pound = 2 pound
 
 count = 1 # 2 pound
+coinValues = [1, 2, 5, 10, 20, 50, 100]
+currentTotal = 0
+goal = 200
 
-for pennys in range(0,201):
-    for twopennys in range(0,101):
-        for fivepennys in range(0,41):
-            for tenpennys in range(0, 21):
-                for twentypennys in range(0, 11):
-                    for fiftypennys in range(0, 5):
-                        for onepound in range(0, 3):
-                            if pennys*1 + twopennys*2 + fivepennys*5 + tenpennys*10 + twentypennys*20 + fiftypennys*50 + onepound*1 == 2:
-                                count += 1
+def combinations(count, coinValues, currentTotal, goal):
+    for i in range(len(coinValues)):
+        newTotal = currentTotal + coinValues[i]
+        if newTotal == goal:
+            count += 1
+        elif newTotal > goal:
+            return count
+        else:
+            count = combinations(count, coinValues[i:], newTotal, goal)
+    return count
 
-print(count)
+print(combinations(count, coinValues, currentTotal, goal))
