@@ -2,7 +2,7 @@ import math
 
 
 # Function takes an int
-# Returns a list of the ints factors including itself
+# Returns a list of the ints factors including itself as floats
 def get_factors(number):
     half_factors = []
     factors = []
