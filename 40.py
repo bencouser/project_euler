@@ -20,7 +20,7 @@ while len(nonComputable) < 1000002:
 
 product = 1
 
-for i in range(8):
+for i in range(7):
     term = 10**i
     product *= nonComputable[term]
 
