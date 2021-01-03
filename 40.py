@@ -12,12 +12,13 @@ import MyModule as mm
 
 nonComputable = []
 count = 0
-while len(nonComputable) < 10000001:
+
+while len(nonComputable) < 1000002:
     digits = mm.find_digits(count)
     nonComputable = nonComputable + digits
     count += 1
 
-product = 1 
+product = 1
 
 for i in range(8):
     term = 10**i
