@@ -7,11 +7,7 @@
 # If the produc of these four fractions is given in its lowest common terms,
 # find the value of the denominator
 
-# note: All numbers can be written as number = n_10 + n_1
-
 import MyModule as mm
-
-count = 0
 
 numerators = []
 denominators = []
@@ -27,4 +23,11 @@ for denominator in range(10, 100):
 for i in range(len(numerators)):
     print(numerators[i] / denominators[i])
 
+num = 1
+dom = 1
 
+for i in range(len(numerators)):
+    num *= numerators[i]
+    dom *= denominators[i]
+
+print(num, "/", dom, "=",  num/dom) # num / dom is 0.01 so i tried 100 and it worked lol
