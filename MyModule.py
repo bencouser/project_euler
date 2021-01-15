@@ -24,7 +24,18 @@ def get_factors(number):
 # Function takes int argument
 # Returns True if the int is prime, False if not
 def is_it_prime(number):
-    return len(get_factors(number)) == 2    
+    if (number <= 1):
+        return False
+    if (number <=3):
+        return True
+    if (number % 2 == 0 or number % 3 == 0):
+        return False
+    i = 5
+    while(i * i <= number):
+        if (number % i == 0 or number % (i + 2) == 0):
+            return False
+        i = i + 6
+    return True
 
 
 # Function takes an int, n digits long
